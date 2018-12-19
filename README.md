@@ -1,3 +1,2 @@
 # fftest
-genggai\
-nihaohao
+test
