@@ -21,11 +21,14 @@ hr {
     clear: both;
 }
 .topNavBar {
-    padding: 20px 16px;
+    padding: 20px 0px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+}
+.topNavBar-inner {
+    padding: 0 16px;
 }
 .topNavBar .logo {
     float: left;
@@ -143,3 +146,16 @@ hr {
     height: 60px;
     fill: white;
 }
+body > main {
+    margin-top: -340px;
+}
+.downloadResume-wrapper {
+    text-align: center;
+}
+.downloadResume{
+    display: inline-block;
+    font-size: 14px;
+    border:1px solid black;
+    padding: 21px 55px;
+}
+
