@@ -78,11 +78,30 @@ h1,h2,h3,h4,h5,h6 {
 .topNavBar nav ul li a {
     color: inherit;
     font-weight: bold;
-    border-bottom: 3px solid transparent;
-    padding-bottom: 3px;
+    margin-bottom: 5px;
+    position: relative;
+    display: block;
+    padding-bottom: 5px;
+    
 }
-.topNavBar nav ul li a:hover {
-    border-bottom-color: #dc6465;
+.topNavBar nav ul li a:hover::after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background:#dc6465;
+    height: 3px;
+    animation: menuSlide 0.3s;
+}
+@keyframes menuSlide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 .banner {
     height: 515px;
