@@ -70,18 +70,24 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0;
     margin: 0;
 }
-.topNavBar nav ul li {
+.topNavBar nav>ul>li {
    float: left;
    margin-left: 17px;
    margin-right: 17px;
-   border: 1px solid red;
+   position: relative;
 }
 .topNavBar .submenu {
+    display: none;
     border: 1px solid blue;
 }
-.topNavBar .submenu li {
-    float: none;
+.topNavBar .submenu.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    white-space: nowrap;
 }
+
 .topNavBar nav ul li a {
     color: inherit;
     font-weight: bold;
