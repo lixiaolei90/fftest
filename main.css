@@ -74,6 +74,13 @@ h1,h2,h3,h4,h5,h6 {
    float: left;
    margin-left: 17px;
    margin-right: 17px;
+   border: 1px solid red;
+}
+.topNavBar .submenu {
+    border: 1px solid blue;
+}
+.topNavBar .submenu li {
+    float: none;
 }
 .topNavBar nav ul li a {
     color: inherit;
