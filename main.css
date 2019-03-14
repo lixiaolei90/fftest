@@ -32,6 +32,15 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.5s;
+    color:#b7b7b7;
+}
+.topNavBar.sticky {
+    background: white;
+    padding: 10px 0px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #3d4451;
 }
 .topNavBar-inner {
     padding: 0 16px;
@@ -53,7 +62,7 @@ h1,h2,h3,h4,h5,h6 {
 .topNavBar nav {
     float: right;
     font-size: 12px;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 5px;
 }
 .topNavBar nav ul {
@@ -67,7 +76,7 @@ h1,h2,h3,h4,h5,h6 {
    margin-right: 17px;
 }
 .topNavBar nav ul li a {
-    color:#b7b7b7;
+    color: inherit;
     font-weight: bold;
     border-bottom: 3px solid transparent;
     padding-bottom: 3px;
