@@ -50,16 +50,16 @@
                 <ul>
                     <li><a href="#">关于</a></li>
                     <li><a href="#">技能</a></li>
-                    <li>
-                        <a class="menuTrigger" href="#">作品</a>
+                    <li class="menuTrigger">
+                        <a href="#">作品</a>
                         <ul class="submenu">
                             <li>作品1</li>
                             <li>作品2</li>
                             <li>作品3</li>
                         </ul>
                     </li>
-                    <li>
-                        <a class="menuTrigger" href="#">博客</a>
+                    <li class="menuTrigger">
+                        <a href="#">博客</a>
                         <ul class="submenu">
                             <li>博客1</li>
                             <li>博客2</li>
@@ -204,10 +204,17 @@
     }
     let aTags = document.getElementsByClassName('menuTrigger');
     for (let i = 0; i < aTags.length; i++) {
-        aTags[i].onmouseenter = function() {
-            console.log('hh')
+        aTags[i].onmouseenter = function (event) {
+            let li = event.currentTarget
+            li.classList.add('active')
         }
+        aTags[i].onmouseleave = function (event) {
+            let li = event.currentTarget
+            li.classList.remove('active')
+        }
+
     }
+
 </script>
 
 </html>
