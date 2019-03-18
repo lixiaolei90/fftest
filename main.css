@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 17px;
     margin-right: 17px;
     position: relative;
+    cursor: pointer;
 }
 
 .topNavBar .submenu {
@@ -98,8 +99,8 @@ h1, h2, h3, h4, h5, h6 {
     top: 100%;
     right: 0px;
     background: white;
-    color: #3d4451
-    
+    color: #3d4451;
+    box-shadow: 0 0 5px rgba(0, 0, 0 , 0.5)
 }
 
 .topNavBar .submenu>li {
@@ -135,10 +136,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes menuSlide {
     0% {
-        width: 0;
+        margin-right: 100%;
     }
     100% {
-        width: 100%;
+        margin-right: 0%;
     }
 }
 
