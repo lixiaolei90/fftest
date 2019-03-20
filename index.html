@@ -223,15 +223,19 @@
             let element = document.querySelector(href);
             var top = element.offsetTop;
 
-            let n = 25;//一共动25次
+            let n = 20;//一共动25次
             let duration = 500 / n //动一次多长时间
-            let currentTop = window.scrollTop;
+            let currentTop = window.scrollY;
             let targetTop = top - 70;
             let distance = (targetTop - currentTop) / n
             let i = 0;
             let id = setInterval(() => {
+                if(i === n) {
+                    window.clearInterval(id);
+                    return
+                }
                 i = i + 1;
-                window.scrollTo(0, targetTop + distance * i)
+                window.scrollTo(0, currentTop + distance * i)
             }, duration);
         }
     }
