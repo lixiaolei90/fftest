@@ -8,8 +8,10 @@
     <title>LXL个人简历</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./loading.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <script src="//at.alicdn.com/t/font_1033524_7zj3hw4gj3x.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
     <style type="text/css">
         .icon {
             width: 1em;
@@ -157,41 +159,29 @@
             </li>
         </ol>
     </section>
+
     <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="portfolio1">所有</li>
-                <li id="portfolio2">框架</li>
-                <li id="portfolio3">原生</li>
-            </ol>
-            <div class="bar">
-                <div id="portfolioBar" class="bar-inner state-1"></div>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                
+                <img src="./img/works/myBookmarks.png" class="swiper-slide">
+                <img src="./img/works/painting.jpg" class="swiper-slide">
+                <img src="./img/works/apple-style-slideshow.png" class="swiper-slide">
             </div>
-        </nav>
-        <div class="works">
-            <div class="big" style="top:0; left:0;">
-                <img src="./img/1.jpg" alt="作品1">
-            </div>
-            <div class="small" style="top:0; left:645px;">
-                <img src="./img/2.jpg" alt="作品2">
-            </div>
-            <div class="small" style="top:312px; left:645px;">
-                <img src="./img/3.jpg" alt="作品3">
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </section>
 </body>
 <script>
-    portfolio1.onclick = function () {
-        portfolioBar.className = "bar-inner state-1";
-    }
-    portfolio2.onclick = function () {
-        portfolioBar.className = "bar-inner state-2";
-    }
-    portfolio3.onclick = function () {
-        portfolioBar.className = "bar-inner state-3";
-    }
+    
     setTimeout(function () {
         siteWelcome.classList.remove('active');
     }, 500)
@@ -286,6 +276,24 @@
             console.log(tween)
         }
     }
+
+    var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    
+    loop: true,
+
+    // If we need pagination
+    pagination: { el: '.swiper-pagination', },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+
+    
+    
+  })
 </script>
 
 </html>
