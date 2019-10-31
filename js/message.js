@@ -14,15 +14,24 @@ myForm.addEventListener('submit',function(e){
     var Message = AV.Object.extend('Message');
     var message = new Message();
     var objects = null;
-    message.save({
-        'name':name,
-        'content':content
-    }).then(function() {
-       
+   
+    message.set('name', name);
+    message.set('content', content);
+    message.save().then(function(){
+        window.location.reload();
     })
-    var query = new AV.Query('Message');
-    console.log(query.find())
-    
-    })
-// message.set(name, content);
 
+    })
+
+var query = new AV.Query('Message');
+    query.find().
+        then(function(messages){
+        let messagesAttr = messages.map((item) => item.attributes)
+        messagesAttr.forEach((item) =>{
+            let li =document.createElement('li');
+            li.innerText = "Name: " + item.name + " Conten: " + item.content;
+            let messageList = document.querySelector('#messageList');
+            messageList.appendChild(li)
+            })
+        })
+        
