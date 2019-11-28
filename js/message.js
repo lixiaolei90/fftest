@@ -11,13 +11,12 @@
             
             message.set('name', name);
             message.set('content', content);
-            return message.save(name,content)
+            return message.save()
         },
         initAV: function() {
             AV.init({
                 appId: "Sg34iuMpPvJF8lWdqjXd9KER-gzGzoHsz",
                 appKey: "xRMT2rQaJ4E4r5TcrjfOHAHH",
-                serverURLs: "https://sg34iump.lc-cn-n1-shared.com"
             });
         }
     }
