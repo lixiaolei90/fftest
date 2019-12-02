@@ -53,18 +53,24 @@
         },
         saveMessage: function() {
             let myForm = this.form;
-            var content = myForm.querySelector('input[name=content]').value;
-            var name = myForm.querySelector('input[name=name]').value;
-            
+            let content = myForm.querySelector('input[name=content]').value;
+            let name = myForm.querySelector('input[name=name]').value;
+            let contentR = content.replace(/\s+/g,"");
+            let nameR = name.replace(/\s+/g,"");
+            console.log(contentR.length)
+            console.log(nameR.length)
+            if(contentR.length !== 0 && nameR.length !==0) {
+                this.model.save(name,content).then(function(object){
+                    let li =document.createElement('li');       
+                    li.innerText = `${object.attributes.name}:  ${object.attributes.content}`
+                    let messageList = document.querySelector('#messageList');
+                    messageList.appendChild(li);
+                    myForm.querySelector('input[name=content]').value = '';
+                    myForm.querySelector('input[name=name]').value = '';
+                    })
+            }
            
-           this.model.save(name,content).then(function(object){
-                let li =document.createElement('li');       
-                li.innerText = `${object.attributes.name}:  ${object.attributes.content}`
-                let messageList = document.querySelector('#messageList');
-                messageList.appendChild(li);
-                myForm.querySelector('input[name=content]').value = '';
-                myForm.querySelector('input[name=name]').value = '';
-                })
+
         }
     }
     controller.init(view,model);
